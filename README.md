@@ -1,4 +1,8 @@
 # face-swap
+
+## Progress
+
+An example in initial.ipynb file shows the idea of what i am working on now. I am going to do the same but for each triangle of face mesh. It will provide realistic results and work fast.
  
 ## TODO:
 - crop
