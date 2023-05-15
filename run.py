@@ -7,7 +7,7 @@ def run(
         source_path: str,
         target_path: str,
         output_path: str
-):
+) -> None:
     source_img = read_image(source_path)
     target_img = read_image(target_path)
 

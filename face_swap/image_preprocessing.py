@@ -1,3 +1,4 @@
+from typing import Tuple
 import numpy as np
 import cv2
 
@@ -6,7 +7,7 @@ import mediapipe as mp
 mp_face_mesh = mp.solutions.face_mesh
 
 
-def align(image: np.ndarray, crop_size: int = 512) -> np.ndarray:
+def align(image: np.ndarray, crop_size: int = 512) -> Tuple[np.ndarray, np.ndarray]:
     height, width, _ = image.shape
 
     face_mesh = mp_face_mesh.FaceMesh(static_image_mode=True)
