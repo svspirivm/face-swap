@@ -28,7 +28,17 @@ Future research and advancements in both mathematical and neural network-based a
 
 The general loss of the original AEI-Net consists of 4 parts: reconstruction loss, attribute loss, identity loss and adversarial loss. 
 
-1. Recontruction loss. 
+1. __Recontruction loss__.
 The idea of the original reconstrstion loss is that if we give model two same images then we don't want her to do anything with them - so that for two same inputs we expect the same output. In GHOST implementation we don't want the model to change anything not only when the source and the target images are the same, but also when the source and the target images are different photos of the same person. It makes sense - there is no need to swap faces when it's the same face. 
+2. __Attribute loss__. 
+This loss ensures that the attribute features for the model output and for the target image are close. 
+3. __Identity loss__. 
+We want identity encoder outputs for the source image and the model output to be similar in terms of cosine similarity. 
+4. __Adversarial loss__.
+GAN loss based on multiscale discriminator from Step 4. 
+
+In order to produce more realistic results the authors added special loss for transfering gaze direction. This __Eye loss__ compares the heatmaps of the eye zone for the model output and the target image. 
+
+The __Overall loss__ is the linear combination of all the five losses mentioned above. 
 
 
